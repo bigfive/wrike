@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Matt Scifo"]
   s.date = %q{2013-03-20}
   s.description = %q{wrike is a Ruby client for the Wrike API using OAuth.}
-  s.email = %q{moomerman@gmail.com}
+  s.email = %q{matt@scifo.info}
   s.files = ["LICENSE", "README.md","lib/wrike.rb"] + Dir.glob('lib/wrike/*.rb')
   s.has_rdoc = false
   s.homepage = %q{http://github.com/mscifo/wrike}
