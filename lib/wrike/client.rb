@@ -37,7 +37,7 @@ module Wrike
     end
 
     def authentication_request_token(options={})
-      consumer(:secure => true).options[:authorize_path] = '/rest/auth/request_token'
+      consumer(:secure => true).options[:request_token_path] = '/rest/auth/request_token'
       request_token(options)
     end
 
