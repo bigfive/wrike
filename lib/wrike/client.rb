@@ -1,5 +1,5 @@
 require 'wrike/profile'
-require 'wrike/contactsa'
+require 'wrike/contacts'
 require 'wrike/folders'
 require 'wrike/tasks'
 require 'wrike/comments'
