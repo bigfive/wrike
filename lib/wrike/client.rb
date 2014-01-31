@@ -42,7 +42,7 @@ module Wrike
     private
 
       def consumer(options={})
-        options[:secure] ||= false
+        options[:secure] ||= true
         protocol = options[:secure] ? 'https' : 'http'
         @consumer ||= OAuth::Consumer.new(
           @consumer_key,
