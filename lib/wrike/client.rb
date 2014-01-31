@@ -20,6 +20,9 @@ module Wrike
       @response_format = options[:response_format] || 'json'
       @api_version = options[:api_version] || 'v2'
       @api_host = options[:api_host] || 'wrike.com'
+      @api_request_token_path = options[:request_token_path] || '/rest/auth/request_token'
+      @api_authorize_path = options[:authorize_path] || '/rest/auth/authorize'
+      @api_access_token_path = options[:access_token_path] || '/rest/auth/request_token'
     end
 
     def authorize(token, secret, options = {})
@@ -36,11 +39,6 @@ module Wrike
       consumer(:secure => true).get_request_token(options)
     end
 
-    def authentication_request_token(options={})
-      consumer(:secure => true).options[:request_token_path] = '/rest/auth/request_token'
-      request_token(options)
-    end
-
     private
 
       def consumer(options={})
@@ -49,7 +47,13 @@ module Wrike
         @consumer ||= OAuth::Consumer.new(
           @consumer_key,
           @consumer_secret,
-          { :site => "#{protocol}://#{@api_host}", :request_endpoint => @proxy }
+          { 
+            :site               => "#{protocol}://#{@api_host}",
+            :request_endpoint   => @proxy,
+            :request_token_path => @api_request_token_path,
+            :authorize_path     => @api_authorize_path,
+            :access_token_path  => @api_access_token_path
+          }
         )
       end
 
