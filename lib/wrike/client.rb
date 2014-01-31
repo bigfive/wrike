@@ -22,7 +22,7 @@ module Wrike
       @api_host = options[:api_host] || 'wrike.com'
       @api_request_token_path = options[:request_token_path] || '/rest/auth/request_token'
       @api_authorize_path = options[:authorize_path] || '/rest/auth/authorize'
-      @api_access_token_path = options[:access_token_path] || '/rest/auth/request_token'
+      @api_access_token_path = options[:access_token_path] || '/rest/auth/access_token'
     end
 
     def authorize(token, secret, options = {})
