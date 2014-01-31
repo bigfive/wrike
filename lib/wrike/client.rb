@@ -54,7 +54,8 @@ module Wrike
             :authorize_path     => @api_authorize_path,
             :access_token_path  => @api_access_token_path,
             :http_method        => :get,
-            :scheme             => :query_string
+            :scheme             => :query_string,
+            :signature_method   => "PLAINTEXT"
           }
         )
       end
