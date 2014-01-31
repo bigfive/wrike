@@ -53,7 +53,8 @@ module Wrike
             :request_token_path => @api_request_token_path,
             :authorize_path     => @api_authorize_path,
             :access_token_path  => @api_access_token_path,
-            :http_method        => :get
+            :http_method        => :get,
+            :scheme             => :query_string
           }
         )
       end
