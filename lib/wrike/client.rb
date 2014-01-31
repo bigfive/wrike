@@ -52,7 +52,8 @@ module Wrike
             :request_endpoint   => @proxy,
             :request_token_path => @api_request_token_path,
             :authorize_path     => @api_authorize_path,
-            :access_token_path  => @api_access_token_path
+            :access_token_path  => @api_access_token_path,
+            :http_method        => :get
           }
         )
       end
