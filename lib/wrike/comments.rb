@@ -2,8 +2,8 @@ module Wrike
   class Client
 
     # Returns list of comments
-    def comment_list(task_id, options={})
-      post('wrike.comment.list', options.merge(:taskId => task_id))
+    def comment_list(options={})
+      post('wrike.comment.list', options)
     end
 
     # Get new, updated, deleted comments lists since tLast
