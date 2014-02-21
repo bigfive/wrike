@@ -11,6 +11,7 @@ module Wrike
   class Client
 
     def initialize(options = {})
+      @timeout = options[:timeout] || (5*60)
       @consumer_key = options[:consumer_key]
       @consumer_secret = options[:consumer_secret]
       @token = options[:token]
@@ -52,7 +53,8 @@ module Wrike
             :request_endpoint   => @proxy,
             :request_token_path => @api_request_token_path,
             :authorize_path     => @api_authorize_path,
-            :access_token_path  => @api_access_token_path
+            :access_token_path  => @api_access_token_path,
+            :timeout            => @timeout
           }
         )
       end
